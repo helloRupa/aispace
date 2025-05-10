@@ -1,3 +1,17 @@
+# aiSpace
+
+A quick little project playing with Gemini in the context of making an old-school MySpace page. Very minimal though.
+
+AI Info/Thoughts:
+* Gemini
+  * Can I use my Gems?
+  * Maybe I can make a cat and dog, or a cat and cat lady
+* Use API with prompts to generate comments on profile
+  * Still thinking about what I mean by this
+  * Maybe I'll have a select with different emotions or thought types plus a custom input
+
+This project is fueled by TJ's peanut M&Ms and coffee.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
