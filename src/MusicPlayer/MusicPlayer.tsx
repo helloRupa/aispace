@@ -1,9 +1,18 @@
 import './musicPlayer.css';
-import forwardImage from '../images/forward-icon.png';
-import playImage from '../images/play-icon.png';
-import stopImage from '../images/stop-icon.png';
+import { Tracks, SongData } from './types';
+import forwardImage from '../assets/images/forward-icon.png';
+import playImage from '../assets/images/play-icon.png';
+import stopImage from '../assets/images/stop-icon.png';
 
-const MusicPlayer: React.FC = () => {
+const Track: React.FC<Omit<SongData, 'id'>> = ({ artist, songTitle, filePath }) => {
+  return (
+    <li data-file={filePath}>
+      <span className="artist title-text">{artist}:</span> {songTitle}
+    </li>
+  );
+}
+
+const MusicPlayer: React.FC<{tracks: Tracks}> = ({ tracks }) => {
   let songTitle: string = "Song Title"; // Placeholder for the song title
   return (
     <div className="music-player">
@@ -20,11 +29,9 @@ const MusicPlayer: React.FC = () => {
       </div>
 
       <ul className="tracks">
-        <li><span className="artist title-text">Queen:</span> I Want to Break Free</li>
-        <li><span className="artist title-text">Aha:</span> Take On Me</li>
-        <li><span className="artist title-text">Human League:</span> Don't You Want Me Baby</li>
-        <li><span className="artist title-text">Dead or Alive:</span> You Spin Me Round</li>
-        <li><span className="artist title-text">Prince:</span> When Doves Cry</li>
+        {tracks.map((track) => (
+          <Track key={track.id} artist={track.artist} songTitle={track.songTitle} filePath={track.filePath} />
+        ))}
       </ul>
     </div>
   );

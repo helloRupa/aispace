@@ -21,7 +21,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--black);
-  background: url("./images/background.gif");
+  background: url("./assets/images/background.gif");
   color: var(--white);
   font-family: "VT323", monospace;
   font-size: 18px;
