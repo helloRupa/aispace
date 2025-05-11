@@ -1,3 +1,5 @@
+import './comments.css';
+
 interface CommentProps {
   author: string;
   text: string;

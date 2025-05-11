@@ -1,3 +1,4 @@
+import './musicPlayer.css';
 import forwardImage from '../images/forward-icon.png';
 import playImage from '../images/play-icon.png';
 import stopImage from '../images/stop-icon.png';

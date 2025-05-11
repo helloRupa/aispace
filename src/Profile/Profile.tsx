@@ -1,3 +1,4 @@
+import './profile.css';
 import catImage from '../images/cat.jpg';
 
 const Profile: React.FC = () => {

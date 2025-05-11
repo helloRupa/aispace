@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import './friends.css';
 import { FriendProps } from './types';
 
 const Friend: React.FC<FriendProps> = ({ name, image, altText }) => {

@@ -1,3 +1,5 @@
+import './bio.css';
+
 const Bio: React.FC = () => {
   return (
     <div className="bio">

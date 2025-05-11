@@ -1,0 +1,27 @@
+.profile {
+  width: 100%;
+  border: 3px solid var(--white);
+  border-radius: 4px;
+  padding: 10px;
+}
+
+.profile .details {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.profile img {
+  width: 200px;
+}
+
+.profile .metadata {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: left;
+}
+
+.profile .status {
+  font-style: italic;
+}
