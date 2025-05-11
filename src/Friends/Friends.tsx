@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { FriendProps } from './types';
 
 const Friend: React.FC<FriendProps> = ({ name, image, altText }) => {

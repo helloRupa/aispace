@@ -1,4 +1,3 @@
-import React from 'react';
 import catImage from '../images/cat.jpg';
 
 const Profile: React.FC = () => {

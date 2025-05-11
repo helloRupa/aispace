@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Bio: React.FC = () => {
   return (
     <div className="bio">
