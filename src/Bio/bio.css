@@ -3,7 +3,7 @@
   border: 2px solid var(--white);
   border-radius: 4px;
   padding: 10px;
-  background-color: #00000087;
+  background-color: var(--transparent-black);
 }
 
 .bio .error-text {

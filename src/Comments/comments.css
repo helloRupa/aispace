@@ -4,7 +4,7 @@
   padding: 10px;
   border: 2px solid var(--white);
   border-radius: 4px;
-  background-color: var(--black);
+  background-color: var(--transparent-black);
 }
 
 .comments h1 {
