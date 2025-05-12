@@ -15,11 +15,11 @@ const friends: FriendProps[] = [
 ];
 
 const playlist: Tracks = [
-  { id: 1, artist: 'Queen', songTitle: 'I Want to Break Free', fileName: 'I-Want-To-Break-Free.mid' },
-  { id: 2, artist: 'Aha', songTitle: 'Take On Me', fileName: 'Aha.mid' },
-  { id: 3, artist: 'Human League', songTitle: "Don't You Want Me Baby", fileName: 'Dont-You-Want-Me.mid' },
-  { id: 4, artist: 'Dead or Alive', songTitle: 'You Spin Me Round', fileName: 'Dead-or-Alive.mid' },
-  { id: 5, artist: 'Prince', songTitle: 'When Doves Cry', fileName: 'Doves.mid' },
+  { id: 1, artist: 'Queen', songTitle: 'I Want to Break Free', filePath: require('./assets/midi/I-Want-To-Break-Free.mid') },
+  { id: 2, artist: 'Aha', songTitle: 'Take On Me', filePath: require('./assets/midi/Aha.mid') },
+  { id: 3, artist: 'Human League', songTitle: "Don't You Want Me Baby", filePath: require('./assets/midi/Dont-You-Want-Me.mid') },
+  { id: 4, artist: 'Dead or Alive', songTitle: 'You Spin Me Round', filePath: require('./assets/midi/Dead-or-Alive.mid') },
+  { id: 5, artist: 'Prince', songTitle: 'When Doves Cry', filePath: require('./assets/midi/Doves.mid') },
 ];
 
 // const apiKey = process.env.REACT_APP_GEMINI_KEY;

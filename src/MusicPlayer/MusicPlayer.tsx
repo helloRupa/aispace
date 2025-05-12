@@ -6,16 +6,16 @@ import playImage from '../assets/images/play-icon.png';
 import stopImage from '../assets/images/stop-icon.png';
 
 const Track: React.FC<SongData & { onClick: (id: number) => void; isActive: boolean; isPlaying: boolean }> 
-  = ({ id, artist, songTitle, fileName, onClick, isActive, isPlaying }) => {
+  = ({ id, artist, songTitle, filePath, onClick, isActive, isPlaying }) => {
   return (
-    <li data-file={fileName} tabIndex={0} onClick={() => onClick(id)} className={ isActive ? 'active' : ' '}>
+    <li data-file={filePath} tabIndex={0} onClick={() => onClick(id)} className={ isActive ? 'active' : ' '}>
       { (isPlaying && isActive) && <span className="is-playing-icon">
         <img src={playImage} alt="playing" />
       </span> }
       <span className="artist title-text">{artist}:</span> {songTitle}
     </li>
   );
-}
+};
 
 const MusicPlayer: React.FC<{tracks: Tracks}> = ({ tracks }) => {
   const [isDisabled, setIsDisabled] = useState<boolean>(true);
@@ -43,8 +43,7 @@ const MusicPlayer: React.FC<{tracks: Tracks}> = ({ tracks }) => {
     if (isDisabled) return;
 
     if (isPlaying) {
-      const path = require(`../assets/midi/${currentTrack.fileName}`);
-      window.MIDIjs.play(path);
+      window.MIDIjs.play(currentTrack.filePath);
     } else {
       window.MIDIjs.stop();
     }
