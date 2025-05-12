@@ -1,3 +1,9 @@
+declare global {
+    interface Window {
+        MIDIjs: Record<string, unknown>;
+    }
+}
+
 export type SongData = {
   id: number;
   artist: string;

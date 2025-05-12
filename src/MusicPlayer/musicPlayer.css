@@ -7,6 +7,15 @@
   }
 }
 
+@keyframes move-left {
+  0% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: -100%;
+  }
+}
+
 .music-player {
   width: 100%;
   min-height: 200px;
@@ -39,15 +48,20 @@
 
 .music-player .title-text {
   color: var(--green);
+  background-color: var(--black);
+  position: relative;
+  padding-left: 5px;
 }
 
 .music-player .now-playing {
   background: var(--black);
-  padding: 5px;
+  padding: 5px 5px 5px 0;
   flex: 1;
   border: 2px solid var(--gray);
   border-image: linear-gradient(90deg, #9bff58, #dda365) 1;
   animation: rotate-hue 30s linear infinite;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .music-player .controls button {
@@ -101,4 +115,8 @@
 .music-player .tracks li.active {
   transform: scaleX(1.02);
   border-color: var(--blue);
+}
+
+.current-song-data {
+  animation: move-left 10s ease-in 5s 1;
 }

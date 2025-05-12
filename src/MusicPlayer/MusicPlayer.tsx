@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import './musicPlayer.css';
 import { Tracks, SongData } from './types';
 import forwardImage from '../assets/images/forward-icon.png';
@@ -13,7 +14,17 @@ const Track: React.FC<Omit<SongData, 'id'>> = ({ artist, songTitle, filePath }) 
 }
 
 const MusicPlayer: React.FC<{tracks: Tracks}> = ({ tracks }) => {
-  let songTitle: string = "Song Title"; // Placeholder for the song title
+  const [currentTrack, setCurrentTrack] = useState<SongData>(tracks[0]);
+
+  useEffect(() => {
+    if (!window.MIDIjs) {
+      const script = document.createElement('script');
+      script.src = '//www.midijs.net/lib/midi.js';
+
+      document.body.appendChild(script);
+    }
+  }, []);
+
   return (
     <div className="music-player">
       <div className="header">
@@ -24,7 +35,8 @@ const MusicPlayer: React.FC<{tracks: Tracks}> = ({ tracks }) => {
           <button className="forward-button"><img src={forwardImage} alt="skip forward" /></button>
         </div>
         <div className="now-playing">
-          <span className="title-text">Now Playing: </span>{songTitle}
+          <span className="title-text">Now Playing: </span>
+          <span className="current-song-data">{currentTrack.artist} - {currentTrack.songTitle}</span>
         </div>
       </div>
 
