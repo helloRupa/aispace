@@ -24,7 +24,7 @@ const Comments: React.FC = () => {
 
   return (
     <div className="comments">
-      <div className="comments-header">
+      <div className="header">
         <h1>Purrrsss</h1>
         <button>Generate</button>
       </div>

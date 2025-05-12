@@ -1,6 +1,31 @@
 .bio {
+  position: relative;
   border: 2px solid var(--white);
   border-radius: 4px;
   padding: 10px;
   background-color: #00000087;
+}
+
+.bio .error-text {
+  color: var(--red);
+  font-size: 1.25em;
+  text-align: center;
+}
+
+.bio .loading {
+  position: absolute;
+  top: 44px;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 45px);
+  background-color: #000000e0;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.bio .spinner {
+  width: 200px;
+  margin: auto;
+  filter: brightness(1.5);
 }

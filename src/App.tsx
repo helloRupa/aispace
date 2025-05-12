@@ -22,7 +22,6 @@ const playlist: Tracks = [
   { id: 5, artist: 'Prince', songTitle: 'When Doves Cry', filePath: require('./assets/midi/Doves.mid') },
 ];
 
-// const apiKey = process.env.REACT_APP_GEMINI_KEY;
 function App() {
   return (
     <div className="App">

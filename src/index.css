@@ -6,6 +6,7 @@
   --blue: #5c74f5;
   --yellow: #d0cc74;
   --gray: #3f3f3f;
+  --red: #ff4d4d;
 }
 
 .title-text {
@@ -90,4 +91,32 @@ ul {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header button {
+  color: var(--green);
+  font-family: inherit;
+  font-size: 24px;
+  text-transform: uppercase;
+  padding: 2px 10px;
+  border: 2px solid var(--white);
+  border-radius: 4px;
+  align-self: flex-start;
+}
+
+.header button:hover {
+  filter: hue-rotate(45deg);
+  background-color: var(--gray);
+}
+
+.disabled {
+  pointer-events: none;
+  opacity: 0.8;
 }

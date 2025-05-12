@@ -123,11 +123,6 @@
   animation: move-left 15s ease-in 5s infinite;
 }
 
-.music-player.disabled {
-  pointer-events: none;
-  opacity: 0.8;
-}
-
 .music-player .error-message {
   width: 200px;
   height: 200px;

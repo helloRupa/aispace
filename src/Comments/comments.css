@@ -7,29 +7,6 @@
   background-color: var(--black);
 }
 
-.comments-header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.comments-header button {
-  color: var(--green);
-  font-family: inherit;
-  font-size: 24px;
-  text-transform: uppercase;
-  padding: 2px 10px;
-  border: 2px solid var(--white);
-  border-radius: 4px;
-  align-self: flex-start;
-}
-
-.comments-header button:hover {
-  filter: hue-rotate(45deg);
-  background-color: var(--gray);
-}
-
 .comments h1 {
   color: var(--white);
 }
