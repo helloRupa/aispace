@@ -13,7 +13,6 @@ const friends: FriendProps[] = [
   { name: 'TomCat', image: tomCat, altText: 'Besty 1: TomCat' },
   { name: 'Official Cat Lady', image: catLady, altText: 'Besty 2: Official Cat Lady' },
 ];
-
 const playlist: Tracks = [
   { id: 1, artist: 'Queen', songTitle: 'I Want to Break Free', filePath: require('./assets/midi/I-Want-To-Break-Free.mid') },
   { id: 2, artist: 'Aha', songTitle: 'Take On Me', filePath: require('./assets/midi/Aha.mid') },

@@ -1,19 +1,14 @@
 import { useState } from 'react';
 import './comments.css';
+import { CommentProps, AIInstructions } from './types';
 import generateResponse from '../utils/ai';
 import { CAT_LADY_SYSTEM_INSTRUCTION, CAT_SYSTEM_INSTRUCTION } from '../constants/ai';
 
-interface CommentProps {
-  author: string;
-  text: string;
-  date: string;
-}
-
-const starterComments: CommentProps[] = [
+const STARTER_COMMENTS: CommentProps[] = [
   { author: 'CatParty_99', text: 'It\'s great to be here! Got any scritches?', date: new Date().toLocaleString() },
   { author: 'TomCat', text: 'Welcome to aiSpace!', date: new Date(Date.now() - 900000000).toLocaleString() },
 ];
-const instructionsByAuthor: Record<string, Record<string, string>> = {
+const INSTRUCTIONS_BY_AUTHOR: Record<string, AIInstructions> = {
   CatLadyOfficial: { 
     instruction: CAT_LADY_SYSTEM_INSTRUCTION,
     prompt: 'Generate a social media comment responding to your beloved cat.',
@@ -23,7 +18,7 @@ const instructionsByAuthor: Record<string, Record<string, string>> = {
     prompt: 'Generate a social media comment. Either respond to your owner, a cat lady, or share a random thought.',
   }
 };
-const authors: string[] = Object.keys(instructionsByAuthor);
+const AUTHORS: string[] = Object.keys(INSTRUCTIONS_BY_AUTHOR);
 
 const Comment: React.FC<CommentProps> = ({ author, text, date }) => {
   return (
@@ -38,16 +33,16 @@ const Comment: React.FC<CommentProps> = ({ author, text, date }) => {
 const Comments: React.FC = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [hasError, setHasError] = useState<boolean>(false);
-  const [comments, setComments] = useState<CommentProps[]>(starterComments);
+  const [comments, setComments] = useState<CommentProps[]>(STARTER_COMMENTS);
 
   const generateComment = async () => {
     setIsLoading(true);
     setHasError(false);
 
     try {
-      const author = authors[Math.floor(Math.random() * 2)];
-      const instruction = instructionsByAuthor[author].instruction;
-      const prompt = instructionsByAuthor[author].prompt;
+      const author = AUTHORS[Math.floor(Math.random() * 2)];
+      const instruction = INSTRUCTIONS_BY_AUTHOR[author].instruction;
+      const prompt = INSTRUCTIONS_BY_AUTHOR[author].prompt;
       const newComment = await generateResponse({ prompt, instruction });
 
       setComments((prevComments) => [

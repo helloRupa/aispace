@@ -5,13 +5,13 @@ import catSpinner from '../assets/images/catSpinner.gif';
 import { CAT_SYSTEM_INSTRUCTION } from '../constants/ai';
 
 const BIO_STORAGE_KEY = 'bioStorageKey';
-const originalBio = "Hey there! I'm just a chill cat hangin' with my human. She knits so much yarn, it's wild! And Costco runs? Epic! I dream of the outside, headbanging to Nirvana like Kurt (dat hair!). Moshing would be awesome, but... tiny cat problems. Vet? No thanks! I love my human, but lemme down sometimes! Life's good, but a little dark sometimes stuck inside, ya know? Peace out!";
+const ORIGINAL_BIO = "Hey there! I'm just a chill cat hangin' with my human. She knits so much yarn, it's wild! And Costco runs? Epic! I dream of the outside, headbanging to Nirvana like Kurt (dat hair!). Moshing would be awesome, but... tiny cat problems. Vet? No thanks! I love my human, but lemme down sometimes! Life's good, but a little dark sometimes stuck inside, ya know? Peace out!";
 const storedBio = localStorage.getItem(BIO_STORAGE_KEY);
 
 const Bio: React.FC = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [hasError, setHasError] = useState<boolean>(false);
-  const [bio, setBio] = useState<string>(storedBio || originalBio);
+  const [bio, setBio] = useState<string>(storedBio || ORIGINAL_BIO);
 
   useEffect(() => {
     localStorage.setItem(BIO_STORAGE_KEY, bio);
