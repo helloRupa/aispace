@@ -12,6 +12,12 @@ AI Info/Thoughts:
 
 This project is fueled by TJ's peanut M&Ms and coffee. I don't recommend this diet.
 
+## Running This Project
+
+* Get an API key for Google Gemini
+* In the root of this project, create a .env file and add this: `REACT_APP_GEMINI_KEY=[YourAPIKey]`
+* Do regular React stuff
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
