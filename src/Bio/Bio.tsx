@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import './bio.css';
 import generateResponse from '../utils/ai';
 import catSpinner from '../assets/images/catSpinner.gif';
+import { CAT_SYSTEM_INSTRUCTION } from '../constants/ai';
 
 const BIO_STORAGE_KEY = 'bioStorageKey';
 const originalBio = "Hey there! I'm just a chill cat hangin' with my human. She knits so much yarn, it's wild! And Costco runs? Epic! I dream of the outside, headbanging to Nirvana like Kurt (dat hair!). Moshing would be awesome, but... tiny cat problems. Vet? No thanks! I love my human, but lemme down sometimes! Life's good, but a little dark sometimes stuck inside, ya know? Peace out!";
@@ -18,9 +19,10 @@ const Bio: React.FC = () => {
 
   const updateBio = async () => {
     setIsLoading(true);
+    setHasError(false);
 
     try {
-      const newBio = await generateResponse({ prompt: 'Generate a bio for a cat.' });
+      const newBio = await generateResponse({ prompt: 'Generate a bio for a cat.', instruction: CAT_SYSTEM_INSTRUCTION });
       setBio(newBio);
     } catch (error) {
       console.error('Error generating bio:', error);
