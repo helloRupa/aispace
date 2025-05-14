@@ -43,7 +43,11 @@ const MusicPlayer: React.FC<{tracks: Tracks}> = ({ tracks }) => {
     if (isDisabled) return;
 
     if (isPlaying) {
-      window.MIDIjs.play(currentTrack.filePath);
+      window.MIDIjs.stop();
+      // stop to play can't be too fast, will sound awful
+      setTimeout(() => {
+        window.MIDIjs.play(currentTrack.filePath);
+      }, 500);
     } else {
       window.MIDIjs.stop();
     }
